@@ -1,0 +1,38 @@
+{
+  "name": "@lomray/strapi-firebase-auth",
+  "version": "1.0.0",
+  "description": "Firebase auth plugin.",
+  "strapi": {
+    "name": "strapi-firebase-auth",
+    "description": "Use firebase authentication for strapi",
+    "kind": "plugin"
+  },
+  "scripts": {
+    "develop": "tsc -w",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@strapi/icons": "^1.3.1",
+    "firebase-admin": "^11.4.0"
+  },
+  "devDependencies": {
+    "@strapi/typescript-utils": "^4.5.4",
+    "typescript": "4.6.3"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": ">=4"
+  },
+  "author": {
+    "name": "Lomray Software"
+  },
+  "maintainers": [
+    {
+      "name": "Mikhail Yarmaliuk"
+    }
+  ],
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
