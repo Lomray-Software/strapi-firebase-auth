@@ -21,7 +21,7 @@ export default ({ strapi }: { strapi: Strapi }) => ({
     const credential = newCredentials || (await strapi.plugin(CONFIG.pluginUID).service(CONFIG.serviceUID).getCredentials())?.credentials
 
     if (credential) {
-      const credentials = JSON.parse(credential);
+      const credentials = typeof credential === 'object' ? credential : JSON.parse(credential);
 
       if (firebase.apps.length) {
         try {
