@@ -93,6 +93,7 @@ export default ({ strapi }: { strapi: Strapi }) => ({
           provider: 'firebase',
           username: identifier,
         },
+        ...(ctx?.query?.populate ? { populate: ctx.query.populate } : {})
       });
 
       if (user?.blocked === true || firebaseUser.disabled) {
