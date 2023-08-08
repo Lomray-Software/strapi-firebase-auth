@@ -23,9 +23,19 @@ export default ({ strapi }: { strapi: Strapi }) => ({
     if (credential) {
       const credentials = JSON.parse(credential);
 
+      if (firebase.apps.length) {
+        try {
+          await firebase.app().delete();
+        } catch (e) {
+          //
+        }
+      }
+
       firebase.initializeApp({
         credential: firebase.credential.cert(credentials),
       });
+
+      console.info('Firebase initialized.');
     }
   },
   saveCredentials: async (data, userId: number) => {
