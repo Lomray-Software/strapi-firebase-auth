@@ -89,7 +89,7 @@ export default ({ strapi }: { strapi: Strapi }) => ({
 
       // Check if the user exists.
       let user = (await strapi.plugin('users-permissions').service('user').fetchAll({
-        where: {
+        filters: {
           provider: 'firebase',
           username: identifier,
         },
