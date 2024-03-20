@@ -88,13 +88,13 @@ export default ({ strapi }: { strapi: Strapi }) => ({
       const identifier = firebaseUser.uid;
 
       // Check if the user exists.
-      let user = await strapi.query('plugin::users-permissions.user').findOne({
+      let user = (await strapi.plugin('users-permissions').service('user').fetchAll({
         where: {
           provider: 'firebase',
           username: identifier,
         },
         ...(ctx?.query?.populate ? { populate: ctx.query.populate } : {})
-      });
+      }))?.[0];
 
       if (user?.blocked === true || firebaseUser.disabled) {
         throw new ApplicationError('Your account has been blocked by an administrator');
