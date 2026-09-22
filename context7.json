@@ -1,0 +1,25 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "strapi-firebase-auth",
+  "description": "Firebase ID token exchange for Strapi Users and Permissions.",
+  "branch": "prod",
+  "folders": [],
+  "excludeFolders": [
+    "node_modules",
+    ".github",
+    "src",
+    "lib",
+    "dist",
+    "__tests__",
+    "__mocks__"
+  ],
+  "excludeFiles": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "CODE_OF_CONDUCT.md"
+  ],
+  "rules": [
+    "Release 1.0.6 uses Strapi 4 APIs; its broad peer range does not establish Strapi 5 compatibility.",
+    "Keep Firebase service-account credentials on the server; clients submit Firebase ID tokens."
+  ]
+}
